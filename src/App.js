@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import routes from './routes'
+import { Switch } from 'react-router-dom'
+import RouteAndSubRoutes from './RouteAndSubRoutes'
 
-function App() {
+import { BrowserRouter } from 'react-router-dom'  
+import { Provider } from 'react-redux'
+
+import App from './App';
+
+import store, { persistor } from './state'
+import { PersistGate } from 'redux-persist/integration/react'
+
+const AppBase = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <React.StrictMode>
+        <Provider store={store}>
+          <PersistGate
+            loading="Loading..."
+            persistor={persistor}
+          >
+            <BrowserRouter>
+              <Switch> {
+                routes.map(
+                  (route, index) => 
+                    <RouteAndSubRoutes key={index} {...route} />
+                  )
+              }
+              </Switch>
+            </BrowserRouter>
+          </PersistGate>
+        </Provider>
+      </React.StrictMode>
     </div>
-  );
+  )
 }
 
-export default App;
+export default AppBase;
