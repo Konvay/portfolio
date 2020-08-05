@@ -25,7 +25,9 @@ const AppBase = () => {
               loading="Loading..."
               persistor={persistor}
             >
-              <BrowserRouter>
+              
+              <BrowserRouter
+                basename="/portfolio/">
                 <Header />
                   <div class="site-content">
                     <Switch> {
