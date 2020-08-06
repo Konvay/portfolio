@@ -1,7 +1,7 @@
 import { createReducer} from '@reduxjs/toolkit'
 
 import {
-    loginUser
+    getItemList
 } from '../actions/fault.actions'
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 const authReducer = createReducer(initialState, {
     ["OHAI"]: (dispatch, action) => {
-        dispatch(() => loginUser())
+        dispatch(() => getItemList())
     }
 });
 
