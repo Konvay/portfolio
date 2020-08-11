@@ -38,7 +38,7 @@ const About = () => {
                             <li>Authentication / Authorization</li>
                             <li>RESTful</li>
                         </ul>
-                        <li>Datbase Design / Development</li>
+                        <li>Database Design / Development</li>
                     </ul>
                 </Grid>
             </Grid>
