@@ -27,9 +27,11 @@ const Header = () => {
                 <Button className="navbar-link" component={Link} to="/about">
                     About
                 </Button>
+                {/*
                 <Button className="navbar-link" component={Link} to="/fault">
                     Fault
                 </Button>
+                */}
             </Toolbar>
         </AppBar>
     )
