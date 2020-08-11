@@ -9,8 +9,10 @@ import '../styles/About.scss'
 const About = () => {
     return (
         <div class="about">
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
+            <Grid container
+                direction="row"
+                justify="center">
+                <Grid item xs={5}>
                     <h3>Technology</h3>
                     <ul>
                         <li>.NET / C#</li>
@@ -24,7 +26,7 @@ const About = () => {
                         <li>Azure / AWS</li>
                     </ul>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={5}>
                     <h3>Skills</h3>
                     <ul>
                         <li>Application Architecture</li>
